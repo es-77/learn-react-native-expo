@@ -9,6 +9,33 @@ This is a React Native project built with Expo, a framework and platform for uni
 - Expo CLI
 - A mobile device or emulator
 
+## Project Setup
+
+1. Install required packages for Expo Router:
+```bash
+npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
+```
+
+2. Configure the entry point in package.json:
+```json
+{
+  "main": "expo-router/entry"
+}
+```
+
+3. Project Structure for Expo Router:
+```
+├── app/           # Main application directory for Expo Router
+│   └── index.js   # Home screen component
+```
+
+4. Expo Router Features:
+- File-based routing system
+- Built-in navigation support
+- Deep linking capabilities
+- Type-safe routing
+- Automatic route generation
+
 ## Installation
 
 1. Install dependencies:
