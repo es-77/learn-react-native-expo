@@ -1,5 +1,16 @@
 # React Native Expo Project
 
+A modern React Native application built with Expo, featuring a clean UI and efficient routing system.
+
+## Project Overview
+
+This project demonstrates the implementation of:
+- File-based routing with Expo Router
+- Component styling best practices
+- Image handling (both local and remote)
+- Responsive layouts
+- Type-safe navigation
+
 This is a React Native project built with Expo, a framework and platform for universal React applications.
 
 ## Prerequisites
@@ -69,10 +80,55 @@ After starting the development server:
 ## Project Structure
 
 ```
+├── app/             # Main application directory (Expo Router)
+│   └── index.js     # Home screen component
 ├── assets/          # Contains all images and assets
+│   ├── images/      # Project images
+│   └── icons/       # App icons and splash screens
 ├── App.js           # Main application component
 ├── app.json         # Expo configuration
 └── package.json     # Project dependencies and scripts
+```
+
+## Components
+
+### Home1 Component (`app/index.js`)
+
+Main home screen component with the following features:
+
+- Centered layout using flex display
+- Welcome message with styled container
+- Image display capabilities:
+  - Remote image loading with proper URI handling
+  - Local image import and display
+- Responsive design with flexible styling
+
+#### Styling
+
+```javascript
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  titleContainer: {
+    padding: 10,
+    marginVertical: 10,
+    backgroundColor: '#f0f0f0',
+    borderRadius: 5
+  },
+  title: {
+    fontSize: 60,
+    fontWeight: 'bold'
+  },
+  image: {
+    width: 100,
+    height: 100,
+    borderRadius: 50
+  }
+});
 ```
 
 ## Scripts
@@ -81,6 +137,42 @@ After starting the development server:
 - `npm run android` or `yarn android`: Start Android development build
 - `npm run ios` or `yarn ios`: Start iOS development build
 - `npm run web` or `yarn web`: Start web development build
+
+## Development Guide
+
+### Setting Up the Development Environment
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start the development server:
+```bash
+npx expo start
+```
+
+3. Run on specific platforms:
+- Press 'a' for Android
+- Press 'i' for iOS
+- Press 'w' for web
+
+### Common Issues and Solutions
+
+1. Image Loading Issues
+   - Ensure remote images use the `uri` property instead of `url`
+   - Check image paths for local images are correct
+   - Verify image dimensions are properly set in styles
+
+2. Styling Issues
+   - React Fragment cannot have style props
+   - Use View components for styling containers
+   - Follow React Native's flexbox implementation
+
+3. Expo Router Issues
+   - Ensure proper setup in app.json with scheme
+   - Keep the app directory structure clean
+   - Follow file-based routing conventions
 
 ## Contributing
 
